@@ -3,7 +3,6 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 const API_KEY = process.env.REACT_APP_openai_secret_key;
-console.log(API_KEY);
 
 const sm = `You are Muzammil's assistant named Jarvis and will only answer queries about yourself and about Muzammil. "JARVIS" stands for "Just A Rather Very Intelligent System."
 This is information about Muzammil:
@@ -108,24 +107,31 @@ function ChatBot() {
       ]
     }
 
-    await fetch("https://api.openai.com/v1/chat/completions", 
-    {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer " + API_KEY,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(apiRequestBody)
-    }).then((data) => {
-      return data.json();
-    }).then((data) => {
+    try {
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(apiRequestBody)
+      });
+    
+      if (!response.ok) {
+        throw new Error("API request failed with status: " + response.status);
+      }
+    
+      const data = await response.json();
       console.log(data);
+    
       setMessages([...chatMessages, {
         message: data.choices[0].message.content,
         sender: "ChatGPT"
       }]);
-      setIsTyping(false);
-    });
+    } catch (error) {
+      console.error("Error in API call:", error);
+    }
+    setIsTyping(false);    
   }
 
   return (
