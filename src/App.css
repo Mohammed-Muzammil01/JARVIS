@@ -15,6 +15,7 @@
 
 body{
   height: 100vh;
+  background-color: #808080;
 }
 
 .App{
@@ -29,6 +30,7 @@ body{
 .cs-main-container{
   border: none;
   margin: 0px;
+  height: 80% !important;
 }
 
 .cs-message__content{
