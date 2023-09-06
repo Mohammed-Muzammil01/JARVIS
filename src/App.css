@@ -1,0 +1,73 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(1, 8, 9);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important; 
+}
+
+body{
+  height: 100vh;
+}
+
+.App{
+ height: 100%;
+}
+
+.cs-message--outgoing .cs-message__content{
+  border-radius: 0.7em !important;
+  background-color: #6A0DAD !important;
+}
+
+.cs-main-container{
+  border: none;
+  margin: 0px;
+}
+
+.cs-message__content{
+  background-color: #E6E6FA;
+}
+
+.cs-message-input{
+  background-color: #E6E6FA !important;
+  padding: 6px !important;
+}
+
+.cs-message-input__content-editor-wrapper, .cs-message-input__content-editor{
+  background-color: #808080 !important;
+}
+
+.cs-message-list{
+  background-color: #808080 !important;
+}
+
+.cs-message-input__tools .cs-button--attachment{
+  display: none;
+}
+
+nav, footer{
+  background-color: #332d2d;
+}
+
+
+.logo{
+  margin-left: 8px;
+  color: #808080;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.cs-typing-indicator__text {
+  font-size: 15px !important;
+}
+.cs-message-list .cs-typing-indicator{
+  width: auto;
+  height: 2em !important;
+}
