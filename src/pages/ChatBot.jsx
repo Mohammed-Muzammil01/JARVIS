@@ -136,7 +136,7 @@ function ChatBot() {
 
   return (
     <div className="App" style={{height:"100%"}}>
-      <div style={{ position:"relative", height: "100%", width: "100%"  }}>
+      <div style={{ position:"relative", height: "100%", width: "80%", marginTop:"10px"  }}>
         <MainContainer>
           <ChatContainer>       
             <MessageList 
