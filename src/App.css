@@ -32,7 +32,7 @@ body{
 .cs-main-container{
   border: 2px solid #594c4c !important; 
   border-radius: 4px;
-  background-color: #808080 !important;
+  background-color: #696565 !important;
   padding: 10px;
   margin: 0px;
   height: 90% !important;
@@ -52,7 +52,7 @@ body{
 }
 
 .cs-message-list{
-  background-color: #808080 !important;
+  background-color: #696565 !important;
 }
 
 .cs-message-input__tools .cs-button--attachment{
